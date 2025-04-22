@@ -9,7 +9,10 @@ class TaskService
     public function __construct(
         protected TaskAssignmentStrategyInterface $assignmentStrategy
     ) {}
-
+    public function assignRoundRobin(Task $task): void
+    {
+        $this->assignmentStrategy->assign($task);
+    }
     public function createTask(array $data): Task
     {
         $task = Task::create([
