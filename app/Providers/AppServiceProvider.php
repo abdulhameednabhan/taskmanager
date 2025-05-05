@@ -17,7 +17,6 @@ class AppServiceProvider extends ServiceProvider
             
             return match (config('task.assignment_strategy')) {
                 'round_robin' => new RoundRobinAssignmentStrategy(),
-              
                 default => new RoundRobinAssignmentStrategy(), 
             };
         });

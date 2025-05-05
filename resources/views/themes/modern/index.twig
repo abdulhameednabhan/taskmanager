@@ -1,0 +1,8 @@
+{# قالب Twig: index.twig داخل المجلد المناسب حسب الثيم #}
+
+{% for section in page.sections %}
+    {% if section is iterable %}
+        {% set type = section.type %}
+        {% include "themes/" ~ page.theme ~ "/sections/" ~ type ~ ".twig" with section %}
+    {% endif %}
+{% endfor %}
